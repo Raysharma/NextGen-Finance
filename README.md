@@ -45,80 +45,81 @@ graph TD
     FastAPI -->|Triggers| PDF
     PDF -->|Returns File| React
 ```
-✨ Core Features
-👤 For Users
-Secure Onboarding: Role-based registration with secure password hashing and JWT authentication.
 
-Account Management: Open new bank accounts and securely update profile information with OTP verification.
+---
 
-Financial Transactions: Execute real-time money transfers, deposits, and withdrawals.
+## ✨ Core Features
 
-Transaction Ledger: View a complete, tamper-proof history of all account activity.
+### 👤 For Users
+* **Secure Onboarding:** Role-based registration with secure password hashing and JWT authentication.
+* **Account Management:** Open new bank accounts and securely update profile information with OTP verification.
+* **Financial Transactions:** Execute real-time money transfers, deposits, and withdrawals.
+* **Transaction Ledger:** View a complete, tamper-proof history of all account activity.
+* **Downloadable Statements:** Generate and download instant PDF account statements.
 
-Downloadable Statements: Generate and download instant PDF account statements.
+### 🛡️ For Administrators
+* **User Control:** View and manage all registered users on the platform.
+* **Lifecycle Management:** Oversee the status of all bank accounts.
 
-🛡️ For Administrators
-User Control: View and manage all registered users on the platform.
+---
 
-Lifecycle Management: Oversee the status of all bank accounts.
+## 🛠️ Technology Stack
 
-🛠️ Technology Stack
-Backend Environment: Python, FastAPI
+* **Backend Environment:** Python, FastAPI
+* **Database & ORM:** SQLite (Easily configurable to PostgreSQL), SQLAlchemy
+* **Authentication:** JSON Web Tokens (JWT), bcrypt for password hashing
+* **Frontend Interface:** React, Vite, standard CSS
 
-Database & ORM: SQLite (Easily configurable to PostgreSQL), SQLAlchemy
+---
 
-Authentication: JSON Web Tokens (JWT), bcrypt for password hashing
+## 🚀 Quick Start Guide
 
-Frontend Interface: React, Vite, standard CSS
-
-🚀 Quick Start Guide
 Follow these simple steps to run the project on your local machine.
 
-1. Start the Backend Server
-Clone the repository and enter the directory:
+### 1. Start the Backend Server
 
-Bash
-   git clone [https://github.com/Raysharma/NextGen-Finance.git](https://github.com/Raysharma/NextGen-Finance.git)
+1. **Clone the repository and enter the directory:**
+   ```bash
+   git clone https://github.com/Raysharma/NextGen-Finance.git
    cd NextGen-Finance
-Install Python dependencies:
-
-Bash
+   ```
+2. **Install Python dependencies:**
+   ```bash
    pip install -r requirements.txt
-Configure the environment:
-
-Create a file named .env in the root directory.
-
-Copy the contents of .env.example into your new .env file and update any necessary values.
-
-Launch the FastAPI application:
-
-Bash
+   ```
+3. **Configure the environment:**
+   * Create a file named `.env` in the root directory.
+   * Copy the contents of `.env.example` into your new `.env` file and update any necessary values.
+4. **Launch the FastAPI application:**
+   ```bash
    uvicorn app.main:app --reload
-The API will be live at http://localhost:8000. You can view the automatic API documentation at http://localhost:8000/docs.
+   ```
+   *The API will be live at `http://localhost:8000`. You can view the automatic API documentation at `http://localhost:8000/docs`.*
 
-2. Start the Frontend Application
-Open a new terminal window and navigate to the frontend folder:
+### 2. Start the Frontend Application
 
-Bash
+1. **Open a new terminal window and navigate to the frontend folder:**
+   ```bash
    cd frontend
-Install Node modules:
-
-Bash
+   ```
+2. **Install Node modules:**
+   ```bash
    npm install
-Configure the frontend environment:
-
-Create a file named .env in the frontend folder.
-
-Copy the contents of .env.example into it. Ensure VITE_API_URL points to your running backend (e.g., VITE_API_URL=http://localhost:8000).
-
-Start the development server:
-
-Bash
+   ```
+3. **Configure the frontend environment:**
+   * Create a file named `.env` in the `frontend` folder.
+   * Copy the contents of `.env.example` into it. Ensure `VITE_API_URL` points to your running backend (e.g., `VITE_API_URL=http://localhost:8000`).
+4. **Start the development server:**
+   ```bash
    npm run dev
-The web app will typically be available at http://localhost:5173.
+   ```
+   *The web app will typically be available at `http://localhost:5173`.*
 
-📁 Project Structure
-Plaintext
+---
+
+## 📁 Project Structure
+
+```text
 NextGen-Finance/
 ├── app/                  # Backend Application Logic
 │   ├── main.py           # FastAPI entry point
@@ -131,7 +132,11 @@ NextGen-Finance/
 │   └── vite.config.js    # Vite configuration
 ├── requirements.txt      # Python dependencies
 └── README.md             # Project documentation
-☁️ Deployment
-Backend: Can be easily deployed to platforms like Render, Railway, or Heroku. Ensure you set your .env variables in the deployment dashboard. Use uvicorn app.main:app --host 0.0.0.0 --port $PORT as the start command.
+```
 
-Frontend: Optimized for deployment on Vercel or Netlify. Set the build command to npm run build and the output directory to dist
+---
+
+## ☁️ Deployment
+
+* **Backend:** Can be easily deployed to platforms like Render, Railway, or Heroku. Ensure you set your `.env` variables in the deployment dashboard. Use `uvicorn app.main:app --host 0.0.0.0 --port $PORT` as the start command.
+* **Frontend:** Optimized for deployment on Vercel or Netlify. Set the build command to `npm run build` and the output directory to `dist`.
