@@ -44,6 +44,7 @@ graph TD
     FastAPI <-->|SQLAlchemy ORM| DB
     FastAPI -->|Triggers| PDF
     PDF -->|Returns File| React
+```
 ✨ Core Features
 👤 For Users
 Secure Onboarding: Role-based registration with secure password hashing and JWT authentication.
