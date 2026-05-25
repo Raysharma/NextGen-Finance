@@ -465,6 +465,7 @@ function App() {
 
   return (
     <div className="page-shell">
+      <Toaster position="top-right" toastOptions={{ style: { background: '#0f172a', color: '#e2e8f0', border: '1px solid rgba(255,255,255,0.1)' } }} />
       <div className="ambient ambient-a" />
       <div className="ambient ambient-b" />
       <div className="noise-grid" />
@@ -694,6 +695,18 @@ function App() {
                         <input type="password" value={registerForm.password} onChange={(e) => setRegisterForm({ ...registerForm, password: e.target.value })} placeholder="At least 8 characters" required />
                       </div>
                     </div>
+                    <div className="two-col">
+                      <div className="field-group full">
+                        <label>Confirm Password</label>
+                        <input
+                        type="password" 
+                        value={confirmPassword} 
+                        onChange={(e) => setConfirmPassword(e.target.value)} 
+                        placeholder="Repeat your password" 
+                        required
+                        />
+                      </div>
+                    </div>
                   </div>
 
                   <div className="auth-note full">
@@ -717,8 +730,6 @@ function App() {
           statusLabel={apiStatus === 'online' ? 'Backend online' : 'Backend offline'}
           statusTone={apiStatus === 'online' ? 'success' : 'danger'}
         >
-          <Toaster position="top-right" toastOptions={{ style: { background: '#0f172a', color: '#e2e8f0', border: '1px solid rgba(255,255,255,0.1)' } }} />
-
           <div className="space-y-6">
             <div className="status-banner surface">
               <span>{message || sectionMeta[activeSection].description}</span>
